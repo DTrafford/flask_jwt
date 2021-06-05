@@ -104,8 +104,6 @@ def refresh():
          -H "Authorization: Bearer <your_token>"
     """
     print("refresh request")
-    # request = flask.request.get_json(force=True)
-    # print("REQUEST = ", request)
     old_token = flask.request.headers.get('Authorization').split(' ')[1]
     print("OLD TOKEN = ", old_token)
     new_token = guard.refresh_jwt_token(old_token)
